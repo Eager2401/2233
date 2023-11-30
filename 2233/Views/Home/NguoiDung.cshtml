@@ -1,0 +1,49 @@
+﻿@model List<_2233.Models.San>
+    @{
+        Layout = null;
+    }
+ <!DOCTYPE html>
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Dang Nhap Nguoi Dung</title>
+        <meta charset="utf-8" />
+        <link href="~/Content/bootstrap-lumen.css" rel="stylesheet" />
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-sm bg-success navbar-dark">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="~/Home/TrangChu">Trang Chủ</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="~/Home/ThueSan">Thuê Sân</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <div>
+            <h4>Thông Tin Sân Bóng Hiện Có:</h4>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <td>Số Sân</td>
+                        <td>Giá Tiền 1 Giờ</td>
+                        <td>Tình Trạng</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var itema in Model)
+                    {
+                        <tr>
+                            <td>@itema.SoSan</td>
+                            <td>@itema.GiaThue1Gio</td>
+                            <td>@itema.TinhTrang</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
